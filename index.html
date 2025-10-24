@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIP Experience</title>
+  <style>
+    :root {
+      --bg: #000;
+      --accent: #F08F23;
+      --text: #fff;
+      --muted: #bfbfbf;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .logo img {
+      width: 120px;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .hero h3 {
+      color: var(--muted);
+      font-weight: 400;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background-color: var(--accent);
+      color: var(--text);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--text);
+      color: var(--accent);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 500px;
+      gap: 1.5rem;
+    }
+
+    input, select {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--muted);
+      color: var(--text);
+      padding: 0.5rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 1px 0 0 var(--accent);
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: left;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 2rem 1rem;
+    }
+
+    .footer a {
+      color: var(--muted);
+      margin: 0 0.5rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="logo"><img src="logo.png" alt="Brand Logo"></div>
+    <h1>Welcome, VIP.</h1>
+    <h3>Thank you for scanning the code. You’ve just entered our private story — made only for a few.</h3>
+    <button class="btn" onclick="document.querySelector('#story1').scrollIntoView({behavior: 'smooth'})">Discover the Story</button>
+  </section>
+
+  <section id="story1">
+    <h2>Gratitude</h2>
+    <p>We’re grateful you’re here — your presence means a lot. By scanning this code, you’ve entered our world: a space built around care, detail, and appreciation — before we even meet you.</p>
+  </section>
+
+  <section id="story2">
+    <h2>The Beginning</h2>
+    <p>It all started with a simple idea: to turn every interaction into a remarkable experience. Not just through what we make, but how we make people feel — comforted, confident, and understood.</p>
+  </section>
+
+  <section id="story3">
+    <h2>Craft & Commitment</h2>
+    <p>From selecting materials to the finishing touches, every detail passes through skilled hands. True elegance lives in subtleties — seen only by those who care, like you.</p>
+  </section>
+
+  <section id="story4">
+    <h2>The People Behind the Brand</h2>
+    <p>Our team is a blend of creators, artisans, and experience experts, united by one passion — delivering excellence. We believe refinement has a human face — and that’s why we listen, adjust, and evolve constantly.</p>
+  </section>
+
+  <section id="story5">
+    <h2>Our Promise</h2>
+    <p>We promise a truly personal experience: tailored connections, private celebrations, and special offerings curated exclusively for you. We’re here to craft moments worth remembering.</p>
+  </section>
+
+  <section id="story6">
+    <h2>Why You Matter</h2>
+    <p>Being a VIP isn’t just a title — it’s a relationship we nurture. Your presence inspires us to give back with attention, privileges, and gestures reserved for those we value deeply.</p>
+  </section>
+
+  <section id="story7">
+    <h2>Invitation to Continue</h2>
+    <p>If you’d like us to keep this connection alive, please leave your details below. Expect short, personal updates — exclusive invites, early access, and experiences shared only with our inner circle.</p>
+
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone">
+
+      <label for="method">Preferred Contact Method</label>
+      <select id="method" name="method">
+        <option>Email</option>
+        <option>WhatsApp</option>
+        <option>Call</option>
+      </select>
+
+      <label><input type="checkbox" required> I agree to receive exclusive VIP updates and invitations.</label>
+
+      <button class="btn" type="submit">Send with Gratitude</button>
+    </form>
+  </section>
+
+  <div class="footer">
+    <p>We respect your privacy — your data stays with us.</p>
+    <p><a href="#">Privacy Policy</a> – <a href="#">Terms</a> – <a href="#">Contact</a></p>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
